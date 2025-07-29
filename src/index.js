@@ -20,25 +20,10 @@ const amplifyConfig = {
       // Configuração para o login com Google
       loginWith: {
         oauth: {
-          // O domínio que você configurou no User Pool (ex: ...amazoncognito.com)
           domain: process.env.REACT_APP_COGNITO_DOMAIN,
-
           scopes: ['profile', 'email', 'openid', 'aws.cognito.signin.user.admin'],
-
-          // A URL de callback que você configurou
-          redirectSignIn: [
-            isLocalhost 
-              ? 'http://localhost:3000/dashboard' 
-              : process.env.REACT_APP_REDIRECT_SIGN_IN
-          ],
-
-          // A URL de logout que você configurou
-          redirectSignOut: [
-            isLocalhost 
-              ? 'http://localhost:3000' 
-              : process.env.REACT_APP_REDIRECT_SIGN_OUT
-          ],
-
+          redirectSignIn: ['https://omena-delta.vercel.app/dashboard'],
+          redirectSignOut: ['https://omena-delta.vercel.app'],
           responseType: 'code',
         }
       }
@@ -46,7 +31,7 @@ const amplifyConfig = {
   }
 };
 
-// 3. Configure a Amplify
+// Configurando a Amplify
 Amplify.configure(amplifyConfig);
 
 
