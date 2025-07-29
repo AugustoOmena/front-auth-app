@@ -22,8 +22,16 @@ const amplifyConfig = {
         oauth: {
           domain: process.env.REACT_APP_COGNITO_DOMAIN,
           scopes: ['profile', 'email', 'openid', 'aws.cognito.signin.user.admin'],
-          redirectSignIn: ['https://omena-delta.vercel.app/dashboard'],
-          redirectSignOut: ['https://omena-delta.vercel.app'],
+             redirectSignIn: [
+            isLocalhost 
+              ? 'http://localhost:3000/dashboard' 
+              : process.env.REACT_APP_REDIRECT_SIGN_IN
+          ],
+          redirectSignOut: [
+            isLocalhost 
+              ? 'http://localhost:3000' 
+              : process.env.REACT_APP_REDIRECT_SIGN_OUT
+          ],
           responseType: 'code',
         }
       }

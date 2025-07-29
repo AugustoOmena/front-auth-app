@@ -27,13 +27,13 @@ export const DashboardPage = () => {
       <div className={styles.buttonGroup}>
         <button
           onClick={() => navigate('/')}
-          className="button"
+          className={styles.button}
         >
           Início
         </button>
         <button
           onClick={signOut}
-          className="button logoutButton"
+          className={`${styles.button} ${styles.logoutButton}`}
         >
           Logout
         </button>

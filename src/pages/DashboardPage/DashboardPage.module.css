@@ -42,3 +42,8 @@
   border-color: #ef4444;
   color: #ef4444;
 }
+
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+}
