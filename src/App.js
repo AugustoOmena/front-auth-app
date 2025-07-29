@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+// DESCRIÇÃO: O coração do roteamento. Ele define quais componentes
+// serão renderizados para cada URL.
+
+import { Routes, Route } from 'react-router-dom';
+import { HomePage } from './pages/HomePage/HomePage';
+import { LoginPage } from './pages/LoginPage/LoginPage';
+import { DashboardPage } from './pages/DashboardPage/DashboardPage';
+import { ProtectedRoute } from './components/ProtectedRoute';
+import './index.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      {/* Rotas Públicas */}
+      <Route path="/" element={<HomePage />} />
+      <Route path="/login" element={<LoginPage />} />
+
+      {/* Rotas Privadas */}
+      <Route
+        path="/dashboard"
+        element={
+          <ProtectedRoute>
+            <DashboardPage />
+          </ProtectedRoute>
+        }
+      />
+    </Routes>
   );
 }
 

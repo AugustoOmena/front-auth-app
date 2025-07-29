@@ -1,0 +1,54 @@
+/* Container principal do Header */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  height: 40px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Estilo da Logo */
+.header-logo {
+  height: 40px;
+}
+
+/* Estilo do Botão */
+.header-button {
+  padding: 8px 16px;
+  background-color: transparent;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* Efeito do botão ao passar o mouse */
+.header-button:hover {
+  background-color: #fce4ec;
+  border-color: #f8bbd0;
+  color: #c2185b;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Estilo da Foto de Perfil */
+.header-profile-pic {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fce4ec;
+}
